@@ -29,7 +29,7 @@
 
       <router-link class="white--text" to="/">Home</router-link> |
       <router-link class="white--text" to="/about">About</router-link> | 
-      <router-link class="white--text" to="/wasim">Wasim</router-link>
+      <router-link class="white--text" to="/wasim">Asim</router-link>
     </v-app-bar>
 
     <v-content>
