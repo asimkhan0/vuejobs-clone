@@ -68,7 +68,9 @@
         :key="item.tab"
         
       >
-        <v-row  class="bg" justify="center">
+      </v-tab-item>
+    </v-tabs-items>
+            <v-row  class="bg" justify="center">
           <v-col md="8">
            <v-row class="section-yellow  pl-2 py-1  my-8">
             <v-col cols="1"><img width="42" height="10" src="./assets/joblogo.png" alt=""></v-col>
@@ -151,17 +153,51 @@
                   </v-row>
             
                   <v-divider light></v-divider>
-
-                  
-
             </v-col>
           </v-row>
-
-
                   </v-col>
                 </v-row>
-      </v-tab-item>
-    </v-tabs-items>
+
+      <v-row class="bg-grey">
+        <v-col md="12">
+          <v-row>
+            <v-col md="2" offset-lg="2" class="text-center">
+              <span class="page-heading d-block white--text text-center py-12 my-12">Find Vue.js Jobs by Location</span>
+            </v-col>
+            <v-col md="1">
+              <img src="./assets/vd.jpg" alt="">
+            </v-col>
+            <v-col  md="2" offset-md="1" class="py-10">
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              
+            </v-col>
+            <v-col  md="2" class="py-10">
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+            </v-col>
+            <v-col  md="2" class="py-10">
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+              <span class="section-heading d-block white--text">Islamabad</span>
+            </v-col>
+
+
+
+          </v-row>
+        </v-col>
+      </v-row>
 </template>
 
 
@@ -192,123 +228,4 @@
 style <style lang="less">
 @import "less/global.less";
 
-.logo-text{
-
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 24px;
-  line-height: 18.4px;
-  letter-spacing: normal;
-  font-weight: bold;
-  color: aqua;
-}
-
-.btn{
-
-  font-size: 16px !important;
-  line-height: 24px;
-  text-align: center;
-  letter-spacing: normal;
-  color: #ffffff;
-}
-
-.outlined{
-  border:1px solid white;
-  border-radius: 5px;
-}
-
-.main-heading{
-  font-size: 2.25rem;
-    font-weight: 300;
-    
-
-}
-
-.secondary-text{
-
-  font-size: 1.25rem;
-    font-weight: 400;
-}
-
-.btn-profile{
-
-  background-color: #536eec;
-
-}
-
-.container-bg{
-  background:url('./assets/header.jpg');
-  background-size: cover;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-}
-
-.mid
-{
-  margin: 0 auto;
-}
-
-.tab{
-
-  background-color: white;
-  color: black !important;
-  
-}
-
-.theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active){
-  color: white !important;
-}
-
-.tab4{
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.section-yellow{
-  background-color: #fff4d3;
-  border: 1px solid #ffe7a0;
-  border-radius: 5px;
-  position: relative;
-}
-
-.section-white{
-  background-color:white;
-  border: 1px solid #eef0f1;
-  border-radius: 5px;
-  position: relative;
-}
-
-.job-title{
-    font-size: 18px;
-    font-weight: 600 !important;
-    line-height: 27px;
-    color: #34495e;
-}
-
-.job-category{
-font-size: 14px;
-line-height: 22px;
-font-weight: 400;
-color: #34495e;
-}
-
-.badge{
-
-    background: rgba(255, 193, 7, 0.5);
-    position: absolute;
-    top: 0;
-    font-size: 0.875rem;
-    right: 0;
-    padding: 3px 10px;
-    border-bottom-left-radius: 4px;
-    border-top-right-radius: 4px;
-    }
-
-  .bg{
-      background-color: #fafafa;
-  }
-
-  .br-a{
-
-    border-radius: 3px;
-  }
 </style>
