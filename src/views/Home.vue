@@ -1,284 +1,44 @@
 <template>
-<v-container class="pa-0" fluid>
-  <v-container fluid class="home-container-bg">
+  <v-container class="pa-0" fluid>
 
-        <Appbar />
+    <Header />
 
-        <v-row class="mt-12">
-          <v-col cols="12" class="mt-10 text-center white--text">
-            <span class="main-heading d-block white--text mb-3">Hire expert <span class="font-weight-medium"> Vue.js developers</span> & <span class="font-weight-medium">find Vue.js jobs</span></span>
-            <span class="secondary-text white--text d-block">Sign up and <span class="tab tab4 mx-1"> Post a job </span>or create your <span class="tab tab4">Developer profile.</span><br/> <span class="mt-1 d-block"> We will find offers / candidates for you!</span></span>
-          </v-col>
-        </v-row>
-        <v-row class="text-center mb-12">
-          <v-col class="mb-12">
-            <v-btn width="259" height="42" class="btn white--text text-capitalize font-weight-regular mr-5" color="#536eec">Create a Developer Profile</v-btn>
-            <v-btn width="181" height="42" class="btn white--text text-capitalize font-weight-regular " color="#42b983">Post a Vue.js Job</v-btn>
+    <FilterJobs />
 
-          </v-col>
-        </v-row>
-      
-      </v-container>
+    <ThirdPartyJobs />
 
+    <JobsByLocation />
 
-      <v-tabs
-      width="70%" class="mid mt-n12 "
-        v-model="tab"
-        centered
-        dark      
-        background-color="rgba(255, 0, 0, 0)"
-      >
-        <v-tab
-          v-for="item in items"
-          :key="item.tab"
-          ripple
-          class="text-capitalize tab2"
-          active-class="tab"
-          
-        >
-          {{ item.tab }}
-        </v-tab>
-      </v-tabs>
+    <LookingForJob/>
 
-      <v-tabs-items v-model="tab">
-        <v-tab-item
-          v-for="item in items"
-          :key="item.tab"
-          
-        >
-        </v-tab-item>
-      </v-tabs-items>
-          <v-row  class="bg">
-            <v-col md="7" offset-md="2">
-              <v-row class="mt-2">
-                <v-col md="12">
-              <img src="https://img.icons8.com/material-two-tone/22/000000/search-in-list.png"/>
-              <span class="font-weight-medium headline px-2">Filter by</span>
+    <PostAJob/>
 
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col md="11">
-                  <v-text-field dense outlined color="blue" placeholder="Keywords, Locations, Job type..."></v-text-field>
-                </v-col>
-                <v-col md="1">
-                 <v-btn color="success" depressed height="40" dark class="text-capitalize btn font-weight-regular ml-n13">Search <img class="ml-1" src="https://img.icons8.com/ios/20/ffffff/search--v1.png"/></v-btn>
-                </v-col>
-              </v-row>
- 
+    <Footer />
 
-            <v-row class="section-yellow  pl-2 py-1  mb-8">
-              <v-col cols="1"><img width="42" height="10" src="../assets/joblogo.png" alt=""></v-col>
-              <v-col cols="11 ">
-                <span class="job-title">Senior JavaScript Developer (Nuxt & Node)</span>
-                <span class="job-category font-weight-regular badge">Full-time</span>
-                <span class="d-block job-category">at <span class="font-weight-bold">Nacelle</span> - <span>Remote</span></span>
-                <span class="job-category">Senior Javascript Developer (Vue) - UNITED STATES ONLY Who We Are Nacelle is an eCommerce Web Service for JAMStack developers. By taking care of complex back-end infrastructure, we...</span>
-              </v-col>
-            </v-row>
-          
-            <v-row class="section-white  pl-2 py-1  my-8 ">
-              <v-col cols="1"><img width="42" height="10" src="../assets/joblogo.png" alt=""></v-col>
-              <v-col cols="11 ">
-                <span class="job-title">Senior JavaScript Developer (Nuxt & Node)</span>
-                <span class="job-category font-weight-regular badge">Full-time</span>
-                <span class="d-block job-category">at <span class="font-weight-bold">Nacelle</span> - <span>Remote</span></span>
-                <span class="job-category">Senior Javascript Developer (Vue) - UNITED STATES ONLY Who We Are Nacelle is an eCommerce Web Service for JAMStack developers. By taking care of complex back-end infrastructure, we...</span>
-              </v-col>
-            </v-row>          
-          </v-col>
-          <v-col md="2" >
-              <a href=""><img class="card-pos ml-4 mt-6" width="120" height="175" src="../assets/ad.jpg" alt=""></a>
-          </v-col>
-
-          </v-row>
-
-          <v-row justify="center" class="mt-12">
-              <v-col md="8">
-                <img class="mb-n2" src="https://img.icons8.com/color/34/000000/search.png"/>
-                <span class="headline font-weight-medium">Try our third party job search</span>
-                <span  class="d-block font-weight-regular mt-5 mb-2 subtitle-1">Still did not find a job matching your needs? We are partnering with some of the most important job search engines to help you find the right position. Use the form below to filter through hundreds of Vue.js related openings:</span>
-                <v-row>
-                  <v-col md="12">
-                    <v-row align="center" class="bg">
-                      <v-col md="5">
-                        <span class="subtitle-1 d-block">Keywords</span>
-                        <v-text-field dense outlined color="blue" placeholder="Freelance, node..."></v-text-field>
-                      </v-col>
-                      <v-col md="5">
-                        <span class="subtitle-1 d-block" >Location</span>
-                        <v-text-field dense outlined color="blue" placeholder="UK, USA, Canada..."></v-text-field>
-                      </v-col>
-                      <v-col md="2">
-                        <v-btn color="#F5315C" dark class="text-capitalize btn font-weight-regular">Search</v-btn>
-                      </v-col>
-                    </v-row>
-                  </v-col>
-                </v-row>
-
-                  <v-row justify="center">
-                    <v-col md="12">
-                      
-                      <v-row align="center">
-                      <v-col md="1"><span class="job-title text-uppercase blue-grey lighten-4 px-3 py-3 br-a">Ft</span></v-col>
-                      <v-col md="11">
-                        <v-row>
-                          <v-col md="10">
-                            <span class="job-title py-1">Senior Front-End Engineer (JavaScript, Vue.js, Vuex)</span>
-                            <span class="d-block job-category">at <span class="font-weight-bold">Fin-Tech Startup </span> - <span>Manhattan, NY</span></span>
-                          </v-col>
-                          <v-col md="2">
-                            <span class="job-category text--secondary d-block mt-4">1 week ago</span>
-                          </v-col>
-                        </v-row>
-                      </v-col>
-                    </v-row>
-              
-                    <v-divider light></v-divider>
-                    
-                      <v-row align="center">
-                      <v-col md="1"><span class="job-title text-uppercase blue-grey lighten-4 px-3 py-3 br-a">Ft</span></v-col>
-                      <v-col md="11">
-                        <v-row>
-                          <v-col md="10">
-                            <span class="job-title py-1">Senior Front-End Engineer (JavaScript, Vue.js, Vuex)</span>
-                            <span class="d-block job-category">at <span class="font-weight-bold">Fin-Tech Startup </span> - <span>Manhattan, NY</span></span>
-                          </v-col>
-                          <v-col md="2">
-                            <span class="job-category text--secondary d-block mt-4">1 week ago</span>
-                          </v-col>
-                        </v-row>
-                      </v-col>
-                    </v-row>
-              
-                    <v-divider light></v-divider>
-              </v-col>
-            </v-row>
-         </v-col>
-       </v-row>
-      <!-- FIND JOBS BY LOCATION -->
-
-        <v-row class="bg-grey">
-          <v-col md="12">
-            <v-row>
-              <v-col md="2" offset-lg="2" class="text-center">
-                <span class="page-heading d-block white--text text-center py-12 my-12">Find Vue.js Jobs by Location</span>
-              </v-col>
-              <v-col md="1">
-                <img src="../assets/vd.jpg" alt="">
-              </v-col>
-              <v-col  md="2" offset-md="1" class="py-10">
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                
-              </v-col>
-              <v-col  md="2" class="py-10">
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-              </v-col>
-              <v-col  md="2" class="py-10">
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-                <span class="section-heading d-block white--text">Islamabad</span>
-              </v-col>
-
-
-
-            </v-row>
-          </v-col>
-        </v-row>
-
-        <!-- LOOKING FOR A JOB -->
-
-        <v-row>
-          <v-col md="12">
-            <v-row align="center">
-              <v-col md="6">
-                <img class="img-class" height="100%" width="100%" src="../assets/vuejs-developers.jpg" alt="">
-              </v-col>
-              <v-col md="6">
-                <v-row align="center" justify="center">
-                  <v-col md="8">
-                  <img class="mb-n2" src="https://img.icons8.com/color/34/000000/search.png"/>
-                    <span class="display-1 font-weight-light "> Looking for a <span class="font-weight-medium">Vue.js job?</span></span>
-                    <span  class="d-block font-weight-light my-2 title">Join our <span class="font-weight-medium">Vue.js professionals network.</span> Sign up and create your professional <span class="font-weight-medium">Vue.js developer profile</span> and let us help companies to find you.</span>
-                    <v-btn color="#42b983" large dark class="btn text-capitalize my-3">Create my Vue.js Profile</v-btn>
-                  </v-col>
-                </v-row>
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-
-        <!-- POST A JOB -->
-
-        <v-row justify="center" class="text-center bg">
-          <v-col md="8">
-            <span class="d-block text-center display-1 font-weight-light py-6 "><span class="font-weight-medium">Hire Vue.js developers</span> from all around the globe</span>
-            <span class="d-block text-center title font-weight-light">Post a job on our leading <span class="font-weight-medium">Vue.js job board</span> and connect with top <span class="font-weight-medium">Vue.js talent</span> across the globe 🌎. Let us help you to find the best talent matches for your openings and make it reach up to 30k Vue.js developers!</span>
-            <v-btn class="btn text-capitalize text-center my-8" large color="#34495E" dark>Post a Vue.js Job</v-btn>          
-          </v-col>
-        </v-row>
-
-        <v-row>
-          <v-col md="12">
-            <v-row align="center">
-              <v-col md="5" class="pl-12">
-                <span class="footer-menu px-5">Browse Jobs</span>
-                <span class="footer-menu px-4">About</span><br><br>
-                <span class="footer-menu">Pricing</span>
-                <span class="footer-menu">Terms & Policy</span>
-              </v-col>
-              <v-col md="5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 801 204" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" style="width: 150px;"><path d="M0 0h30.448l30.865 89.884 5.422 19.186h1.668l5.84-19.186L106.359 0h30.448L82.376 149.319H52.762L0 0zM211.258 135.972h-1.669c-3.197 5.144-7.507 9.211-12.93 12.2-5.422 2.989-11.609 4.484-18.56 4.484-12.93 0-22.558-3.962-28.884-11.887-6.326-7.925-9.489-18.491-9.489-31.699V47.132h27.32v58.601c0 7.369 1.633 12.826 4.901 16.371 3.267 3.545 8.029 5.318 14.285 5.318 3.754 0 7.056-.799 9.906-2.398 2.85-1.599 5.283-3.754 7.299-6.465s3.545-5.909 4.588-9.593c1.043-3.685 1.564-7.612 1.564-11.783V47.132h27.32v102.187h-25.651v-13.347zM352.861 124.711c-4.727 8.342-11.088 15.085-19.082 20.229-7.995 5.144-17.761 7.716-29.301 7.716-7.786 0-14.981-1.355-21.585-4.067-6.604-2.711-12.339-6.499-17.205-11.365-4.866-4.866-8.654-10.601-11.365-17.205-2.712-6.604-4.067-13.869-4.067-21.794 0-7.368 1.321-14.355 3.962-20.959 2.642-6.603 6.326-12.373 11.053-17.309 4.727-4.935 10.323-8.863 16.788-11.783 6.465-2.919 13.59-4.379 21.376-4.379 8.203 0 15.502 1.355 21.898 4.066 6.395 2.712 11.748 6.465 16.058 11.262 4.31 4.797 7.577 10.462 9.801 16.996 2.225 6.535 3.337 13.626 3.337 21.272v2.503a14.04 14.04 0 0 0-.208 2.294 11.72 11.72 0 0 0-.209 2.294h-76.954c.556 4.171 1.703 7.751 3.441 10.74 1.738 2.989 3.893 5.492 6.465 7.508s5.388 3.475 8.446 4.379a32.943 32.943 0 0 0 9.385 1.356c6.256 0 11.435-1.425 15.537-4.276 4.101-2.85 7.334-6.43 9.697-10.74l22.732 11.262zm-24.817-39.624c-.139-1.807-.73-3.823-1.773-6.048-1.043-2.224-2.572-4.31-4.588-6.256-2.016-1.947-4.518-3.546-7.508-4.797-2.989-1.251-6.569-1.877-10.74-1.877-5.839 0-10.983 1.669-15.432 5.005-4.449 3.337-7.577 7.995-9.385 13.973h49.426z" fill="#18ca84" fill-rule="nonzero"></path> <path d="M460.471 0v101.979c0 8.342-1.286 15.676-3.858 22.002-2.572 6.326-6.048 11.609-10.428 15.849-4.379 4.241-9.523 7.439-15.432 9.594-5.909 2.155-12.27 3.232-19.082 3.232-11.818 0-22.141-3.198-30.969-9.593-8.829-6.395-14.981-15.224-18.457-26.485l25.86-10.636c1.808 6.673 4.727 11.678 8.759 15.015 4.032 3.337 8.968 5.005 14.807 5.005 6.534 0 11.609-2.085 15.224-6.256s5.422-10.011 5.422-17.518V28.154h-44.134V0h72.288zM553.298 146.928a56.743 56.743 0 0 1-3.674 1.661c-6.604 2.712-13.868 4.067-21.793 4.067-7.924 0-15.189-1.355-21.793-4.067-6.604-2.711-12.304-6.465-17.101-11.261-4.796-4.797-8.55-10.532-11.261-17.205-2.711-6.674-4.067-13.973-4.067-21.898 0-7.924 1.356-15.223 4.067-21.897 2.711-6.673 6.465-12.408 11.261-17.205 4.797-4.797 10.497-8.55 17.101-11.262 6.604-2.711 13.869-4.066 21.793-4.066 7.925 0 15.189 1.355 21.793 4.066 6.604 2.712 12.305 6.465 17.101 11.262 4.797 4.797 8.551 10.532 11.262 17.205 2.711 6.674 4.066 13.973 4.066 21.897 0 7.925-1.355 15.224-4.066 21.898-2.711 6.673-6.465 12.408-11.262 17.205-.413.414-.834.819-1.261 1.217l9.594 14.669a10.564 10.564 0 0 1 7.761 4.725l20.487 31.321a3.566 3.566 0 0 1-1.033 4.937l-12.933 8.46a3.566 3.566 0 0 1-4.937-1.033l-20.487-31.321a10.566 10.566 0 0 1-1.219-9.004l-9.399-14.371zm-25.467-19.506c3.476 0 6.848-.66 10.115-1.981a25.812 25.812 0 0 0 8.655-5.735c2.502-2.503 4.483-5.562 5.943-9.176 1.46-3.615 2.19-7.717 2.19-12.305s-.73-8.689-2.19-12.304-3.441-6.673-5.943-9.176a25.812 25.812 0 0 0-8.655-5.735 26.746 26.746 0 0 0-10.115-1.981c-3.614 0-7.021.66-10.218 1.981-3.198 1.321-6.048 3.233-8.551 5.735-2.502 2.503-4.484 5.561-5.943 9.176-1.46 3.615-2.19 7.716-2.19 12.304s.73 8.69 2.19 12.305c1.459 3.614 3.441 6.673 5.943 9.176 2.503 2.502 5.353 4.414 8.551 5.735 3.197 1.321 6.604 1.981 10.218 1.981z" fill="#2c3e50"></path> <path d="M595.4 0h27.32v44.838l-1.668 14.598h1.668c2.503-4.31 6.395-7.995 11.679-11.053 5.283-3.059 11.817-4.588 19.603-4.588 6.534 0 12.756 1.355 18.665 4.066 5.909 2.712 11.122 6.465 15.641 11.262 4.518 4.797 8.098 10.532 10.74 17.205 2.642 6.674 3.962 13.973 3.962 21.897 0 7.925-1.32 15.224-3.962 21.898-2.642 6.673-6.222 12.408-10.74 17.205-4.519 4.796-9.732 8.55-15.641 11.261-5.909 2.712-12.131 4.067-18.665 4.067-7.786 0-14.32-1.529-19.603-4.588-5.284-3.059-9.176-6.743-11.679-11.053h-1.668v12.304H595.4V0zm52.971 127.422c3.615 0 7.056-.695 10.323-2.086a27.157 27.157 0 0 0 8.655-5.839c2.503-2.502 4.518-5.561 6.048-9.176 1.529-3.615 2.294-7.647 2.294-12.096s-.765-8.48-2.294-12.095c-1.53-3.615-3.545-6.674-6.048-9.176a27.177 27.177 0 0 0-8.655-5.84c-3.267-1.39-6.708-2.085-10.323-2.085s-7.056.66-10.323 1.981a25.812 25.812 0 0 0-8.655 5.735c-2.502 2.503-4.518 5.561-6.047 9.176-1.53 3.615-2.294 7.716-2.294 12.304s.764 8.69 2.294 12.305c1.529 3.614 3.545 6.673 6.047 9.176a25.812 25.812 0 0 0 8.655 5.735c3.267 1.321 6.708 1.981 10.323 1.981zM756.815 152.656c-6.673 0-12.617-.834-17.83-2.502-5.214-1.669-9.732-3.859-13.556-6.57-3.823-2.711-7.056-5.839-9.697-9.384-2.642-3.546-4.658-7.126-6.048-10.74l24.4-10.428c2.363 5.283 5.526 9.211 9.489 11.783 3.962 2.572 8.376 3.858 13.242 3.858 5.006 0 8.968-.903 11.888-2.711 2.919-1.807 4.379-3.962 4.379-6.465 0-2.78-1.216-5.04-3.65-6.778-2.433-1.737-6.638-3.302-12.617-4.692l-14.389-3.128c-3.198-.695-6.5-1.807-9.906-3.337a38.756 38.756 0 0 1-9.281-5.839c-2.78-2.364-5.074-5.214-6.882-8.551-1.807-3.336-2.711-7.229-2.711-11.678 0-5.005 1.078-9.454 3.233-13.347 2.155-3.893 5.109-7.195 8.863-9.906 3.754-2.711 8.168-4.797 13.243-6.256 5.074-1.46 10.531-2.19 16.371-2.19 9.732 0 18.421 1.911 26.068 5.735 7.647 3.823 13.277 9.906 16.892 18.248l-23.566 9.593c-1.946-4.032-4.796-6.952-8.55-8.759-3.754-1.808-7.508-2.711-11.261-2.711-3.893 0-7.3.799-10.219 2.398-2.92 1.599-4.38 3.65-4.38 6.152 0 2.364 1.217 4.241 3.65 5.631 2.433 1.39 5.735 2.641 9.906 3.754l15.641 3.754c10.427 2.502 18.178 6.499 23.253 11.991 5.074 5.492 7.612 11.991 7.612 19.499 0 4.449-1.043 8.69-3.129 12.721-2.085 4.032-5.039 7.612-8.863 10.741-3.823 3.128-8.411 5.596-13.764 7.403-5.353 1.807-11.296 2.711-17.831 2.711z" fill="#2c3e50" fill-rule="nonzero"></path></svg></v-col>
-              <v-col md="2">
-                <span class="page-heading d-block font-weight-regular" >Get in Touch</span>
-                <span class="d-block pl-1 pb-1">imasim@vuejobs.io</span>
-                <a target="_blank" class="pr-2" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#403e56"><path d="M125.59583,64.5h-25.2625v-14.33333c0,-7.396 0.602,-12.05433 11.2015,-12.05433h13.38733v-22.79c-6.5145,-0.67367 -13.06483,-1.00333 -19.62233,-0.989c-19.44317,0 -33.63317,11.87517 -33.63317,33.67617v16.4905h-21.5v28.66667l21.5,-0.00717v64.50717h28.66667v-64.5215l21.973,-0.00717z"></path></g></g></svg></a>
-                <a target="_blank" class="px-2" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#403e56"><path d="M157.66667,28.6595c-5.59,3.31817 -16.80583,7.84033 -23.39917,9.14467c-0.1935,0.05017 -0.35117,0.11467 -0.5375,0.16483c-5.8265,-5.74767 -13.81017,-9.3095 -22.64667,-9.3095c-17.80917,0 -32.25,14.44083 -32.25,32.25c0,0.93883 -0.07883,2.666 0,3.58333c-24.02983,0 -42.31917,-12.58467 -55.43417,-28.66667c-1.42617,3.58333 -2.04967,9.245 -2.04967,14.56267c0,10.0405 7.8475,19.90183 20.06667,26.015c-2.25033,0.5805 -4.73,0.99617 -7.31,0.99617c-4.16383,0 -8.57133,-1.0965 -12.60617,-4.42183c0,0.12183 0,0.2365 0,0.3655c0,14.03233 14.89233,23.5855 28.13633,26.24433c-2.6875,1.58383 -8.1055,1.7415 -10.75,1.7415c-1.86333,0 -8.45667,-0.85283 -10.21967,-1.1825c3.68367,11.5025 16.97067,17.96683 29.63417,18.19617c-9.90433,7.76867 -16.77717,10.64967 -37.05883,10.64967h-6.90867c12.814,8.213 29.1325,14.3405 45.48683,14.3405c53.24833,0 83.51317,-40.58483 83.51317,-78.8405c0,-0.61633 -0.01433,-1.90633 -0.03583,-3.2035c0,-0.129 0.03583,-0.25083 0.03583,-0.37983c0,-0.1935 -0.05733,-0.37983 -0.05733,-0.57333c-0.0215,-0.97467 -0.043,-1.88483 -0.0645,-2.35783c5.66167,-4.085 10.57083,-9.1805 14.45517,-14.9855c-5.19583,2.30767 -10.7715,3.85567 -16.62667,4.558c5.977,-3.58333 14.4695,-12.126 16.62667,-18.89133z"></path></g></g></svg></a>
-                <a target="_blank" class="px-2" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#403e56"><path d="M136.16667,21.5h-100.33333c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v100.33333c0,7.91917 6.41417,14.33333 14.33333,14.33333h100.33333c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-100.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM64.5,121.83333h-18.0815v-50.16667h18.0815zM55.14033,62.47183c-5.5255,0 -9.21633,-3.68367 -9.21633,-8.6c0,-4.91633 3.68367,-8.6 9.8255,-8.6c5.5255,0 9.21633,3.68367 9.21633,8.6c0,4.91633 -3.68367,8.6 -9.8255,8.6zM129,121.83333h-17.501v-27.41967c0,-7.58233 -4.6655,-9.331 -6.41417,-9.331c-1.74867,0 -7.58233,1.16817 -7.58233,9.331c0,1.16817 0,27.41967 0,27.41967h-18.0815v-50.16667h18.0815v7.00183c2.32917,-4.085 6.99467,-7.00183 15.74517,-7.00183c8.7505,0 15.75233,7.00183 15.75233,22.747z"></path></g></g></svg></a>
-                <a target="_blank" class="px-2" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#403e56"><path d="M59.125,37.625c-26.71375,0 -48.375,21.66125 -48.375,48.375c0,26.71375 21.66125,48.375 48.375,48.375c26.71375,0 48.375,-21.66125 48.375,-48.375c0,-3.31906 -0.36281,-6.5575 -0.99437,-9.675l-0.26875,-1.075h-47.11188v16.125h32.25c-2.56656,15.25156 -16.27281,26.875 -32.25,26.875c-17.81812,0 -32.25,-14.43187 -32.25,-32.25c0,-17.81812 14.43188,-32.25 32.25,-32.25c8.0625,0 15.41281,2.98313 21.07,7.87438l11.55625,-11.31438c-8.6,-7.87437 -20.04875,-12.685 -32.62625,-12.685zM134.375,59.125v16.125h-16.125v10.75h16.125v16.125h10.75v-16.125h16.125v-10.75h-16.125v-16.125z"></path></g></g></svg></a>
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-</v-container>
+  </v-container>
 
 </template>
 
 <script>
 // @ is an alias to /src
-import Appbar from "../components/Appbar";
+import Footer from "../components/Home/Footer";
+import Header from "../components/Home/Header";
+import FilterJobs from "../components/Home/FilterJobs";
+import ThirdPartyJobs from "../components/Home/ThirdPartyJobs";
+import JobsByLocation from "../components/Home/JobsByLocation";
+import LookingForJob from "../components/Home/LookingForJob";
+import PostAJob from "../components/Home/PostAJob"
 
 export default {
-     data () {
-      return {
-        tab: null,
-        items: [
-          { tab: 'All Jobs', content: 'Tab 1 Content' },
-          { tab: 'Full Time', content: 'Tab 2 Content' },
-          { tab: 'Part Time', content: 'Tab 3 Content' },
-          { tab: 'Freelance', content: 'Tab 4 Content' },
-          { tab: 'Temporary', content: 'Tab 5 Content' },
-          { tab: 'Internship', content: 'Tab 6 Content' },
-          { tab: 'remote', content: 'Tab 7 Content' },
-          
-        ],
-      }
-    },
   name: 'Home',
   components: {
-        Appbar
+        Footer,
+        Header,
+        FilterJobs,
+        ThirdPartyJobs,
+        JobsByLocation,
+        LookingForJob,
+        PostAJob
   }
 }
 </script>
